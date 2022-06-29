@@ -1,0 +1,42 @@
+{% extends 'app/base_tienda.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+<div class="col-lm-2  bg-rojo-clarito">
+
+{% block Contenido_Tienda %}
+
+
+
+
+    <table class="table table-stripped table-condensed">
+    <thead>  
+        <tr>
+            <th>NOMBRE DE PRODUCTO</th>
+            <th>PRECIO</th>
+            <th>CODIGO</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for aux in listaProductos %}
+      <!--{% if aux.tipo.tipo == 'Nombre de la wea' %} {% endif %}  es como para filtrar.-->  
+           
+        <tr>
+            <td>{{ aux.nombre }}</td>
+            <td>{{ aux.precio }}</td>
+            <td>{{ aux.codigo }}</td>
+
+        </tr>
+    {% endfor %}
+    
+   </tbody>
+   
+</table>  
+
+{% endblock Contenido_Tienda %}
+ 
+
+
+</div>
+

@@ -1,0 +1,89 @@
+{% extends 'app/base_sin_inicio_sesion.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block ContenidoSin %}
+<div class="col-6 col-md mb-3 ">
+  
+  {% for aux in listaProductos %}
+  
+ 
+  
+    <a href="" class="position-absolute "></a>
+        <div class="align-items-center p-3 ">
+    <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm text-center">
+      <div class="list-card-image">
+        
+        <div class="member-plan position absolute"><span class="badge m-3 badge-danger">{{ aux.tipo }}</span></div>
+        <div class="p-3">
+          
+          {% if aux.imagen %}
+          <img src="{{ aux.imagen.url }}" class="i mg-fluid item-img mb-3" width="130" height="100">
+          {% else %}
+          <img src="{% static 'app/img/perro.jpg' %}" class="img-fluid item-img w-100 mb-3" width="130" height="100">
+          {% endif %}
+    
+          <div class="card-body text-center" >
+            <h4 class=" card-title " >{{ aux.nombre }} - ${{ aux.precio }} </h4>
+            <p class="card-text">{{ aux.descripcion }}</p>
+            <form action ="" method="POST">
+              {% csrf_token %}
+              <input  type="hidden" name="nombre_producto" id="nombre_producto" value="{{ aux.nombre }}">
+              <input  type="hidden" name="precio_producto" id="precio_producto" value="{{ aux.precio }}">
+              <input  type="hidden" name="imagen_producto" id="imagen_producto" value="{{ aux.imagen_producto }}">
+    
+              <a href="" class="btn btn-primary bg-btn text-white" data-toggle="modal" data-target="#myModal">Comprar Producto</a>
+              <!-- The Modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content ">
+  
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">Ingresa los siguientes datos...</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+  
+                    <!-- Modal body -->
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <div style="text-align: center;">
+                        <img src="{% static 'app/img/logo-pet.png' %}" alt="" width="80">
+                        <form action="pagina-inicio-sesion.html" method="GET">
+                          <div class="form-group">
+                            <label for="txtUser">Usuario:</label>
+                            <input type="text" placeholder="Ej:nombre.Usuario" class="form-control" id="txtUser" name="txtUser">
+                          </div>
+                          <div class="form-group">
+                              <label for="txtPass">Contraseña:</label>
+                              <input type="password" placeholder="Ej:12345" class="form-control" id="txtPass" name="txtPass">
+                          </div>
+
+                          <input type="submit" id="btnEnviar" name="btnEnviar" class="btn btn-success">
+                          <input type="reset" id="btnLimpiar" name="btnLimpiar" class="btn btn-danger">
+                        </form>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div> 
+
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  {% endfor %}
+</div>
+
+{% endblock ContenidoSin %}

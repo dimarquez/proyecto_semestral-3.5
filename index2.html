@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+   {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Mascotas
+    </title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+
+</head>
+<body >
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-info">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="{% static 'app/img/logo-pet.png' %}" alt="" width="80"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <p class="h2 text-white letra-logo me-5">PetShorizos</p>
+            </li>
+            {% if user.is_staff == 1 %}
+            <li class="nav-item ">
+              <a class="nav-link text-white boton"  width="80px"href="http://127.0.0.1:8000/admin/"><i class="fa-solid fa-bag-shopping "></i> Administracion</a>
+            </li>
+            {% endif %}
+
+            <li class="nav-item ">
+              <a class="nav-link text-white boton" width="80px"href="{% url 'login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesión</a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link text-white boton" width="80px"href="{% url 'registro_usuarios' %}"><i class="fa-solid fa-address-card"></i> Registrarse</a>
+            </li>
+            
+            <li class="nav-item ">
+              <a class="nav-link text-white boton" width="80px" href="tienda_sin_sesion.html"><i class="fa-solid fa-bag-shopping "></i> Tienda</a>
+            </li>
+
+
+          </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Cuerpo de la pagina style="min-height: 80vh;-->
+
+    <div class="row" style="min-height: 80vh";>
+      <div class="col-sm-12 ">
+        <div class="container  mt-3 mb-3 text-center">
+          <p class="h1 letra-logo ">Bienvenidos a PetShorizos</p>
+          <img src="{% static 'app/img/logo-pet.png' %}" alt="" width="80">
+          <h4 class="p-1 mt-3">¿Quiénes somos?</h4>
+          <ul class="p-1 mt-3">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, 
+            ab dolorum! Ducimus officia blanditiis nobis necessitatibus beatae eius
+            quisquam nisi, eveniet rem voluptates deleniti, dignissimos consectetur 
+            aliquid laudantium vitae facilis! Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Eveniet, velit ducimus harum numquam earum vel reiciendis
+            perspiciatis incidunt, beatae voluptatibus quaerat ullam iusto distinctio 
+            voluptatum voluptas odit, aspernatur magni consequuntur.
+          </ul>
+          <a>☺ Regalonea a tus mascotas ☻</a>
+          <br>
+          <img src="{% static 'app/img/carrusel-1.jpg' %}" width="" height="" alt="">
+          <br>
+          <a>☺ Para que estén así de contentas ☻</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5 " style="min-height: 70vh";>
+      <div class="col-sm-1 ">
+      </div>
+      <div class="col-sm-10  text-center ">
+        <p class="h1 letra-logo ">Anímate y suscríbete, para tener acceso a los descuentos</p>
+        <ul class="p-1 mt-3">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, 
+          ab dolorum! Ducimus officia blanditiis nobis necessitatibus beatae eius
+          quisquam nisi, eveniet rem voluptates deleniti, dignissimos consectetur 
+          aliquid laudantium vitae facilis! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eveniet, velit ducimus harum numquam earum vel reiciendis
+          perspiciatis incidunt, beatae voluptatibus quaerat ullam iusto distinctio 
+          voluptatum voluptas odit, aspernatur magni consequuntur.
+        </ul>
+        <a>♥ Podrás estar feliz con tu amigo peludo ♥</a>
+        <br>
+        <img src="{% static 'app/img/5516806.jpg' %}" width="400" height="" alt="">
+        <br>
+        <a>♥ Podrás estar feliz con tu amigo peludo ♥</a>
+      </div>
+      <div class="col-sm-1 ">
+      </div>
+    </div>
+
+    
+    <div class="row mt-5 " style="min-height: 100vh";>
+      <div class="col-sm-1 ">
+      </div>
+      <div class="col-sm-10  text-center ">
+        <p class="h1 letra-logo ">Suscríbete para tener los mejores productos para las mejores mascotas</p>
+        <ul class="p-1 mt-3">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, 
+          ab dolorum! Ducimus officia blanditiis nobis necessitatibus beatae eius
+          quisquam nisi, eveniet rem voluptates deleniti, dignissimos consectetur 
+          aliquid laudantium vitae facilis! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eveniet, velit ducimus harum numquam earum vel reiciendis
+          perspiciatis incidunt, beatae voluptatibus quaerat ullam iusto distinctio 
+          voluptatum voluptas odit, aspernatur magni consequuntur.
+        </ul>
+        <a>☺ Podrás estar feliz con tu amigo peludo ☺</a>
+        <br>
+        <img src="{% static 'app/img/accesorios.jpg' %}" width="600" alt="">
+        <br>
+        <a>☺ Podrás estar feliz con tu amigo peludo ☺</a>
+      </div>
+      <div class="col-sm-1 ">
+      </div>
+    </div>    
+    <!-- Cuerpo de la pagina -->
+
+    <!-- Footer -->
+    <div class="p-4 bg-info text-white">
+        <div class="d-flex justify-content-between ">
+          <table>
+            <tr>
+              <td><i class="fa-brands fa-instagram me-2"></i></td>
+              <td>@PetShorizos</td>
+            </tr>
+            <tr>
+              <td><i class="fa-brands fa-facebook me-2"></i></td>
+              <td>Petshop Los Shorizos</td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td></td>
+              <td>Llamanos al:</td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-phone me-2"></i></td>
+              <td>+56 9 4636 3004</td>
+            </tr>
+          </table>
+          
+
+        </div>
+        <p class="text-center">©PAGINA CREADA POR NOSOTROS PARA NUESRTA FUNDACIÓN</p>
+    </div>
+    <!-- Footer -->
+
+
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

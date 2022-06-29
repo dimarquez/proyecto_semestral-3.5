@@ -1,0 +1,24 @@
+{% extends 'app/base_miscompras.html' %}
+{% load static %}
+{%block ContenidoMisCompras %}
+<table>
+  <tr>
+      <td><img src="{% static 'app/img/115775_truck_transportation_transport_vehicle_icon.png' %}" width="100"  alt=""></td>
+      <td><img src="{% static 'app/img/211607_right_arrow_icon.png' %}" width="50" class="ml-2 mr-2" alt=""></td>
+      <td><img src="{% static 'app/img/3615742_box_delivery_package_parcel_sealed_icon.png' %}" width="100" alt=""></td>
+      <td><img src="{% static 'app/img/211607_right_arrow_icon.png' %}" width="50" class="ml-2 mr-2" alt=""></td>
+      <td><img src="{% static 'app/img/430102_home_house_icon.png' %}" width="100" alt=""></td>
+  </tr>
+</table>
+<table class="mt-5">
+  <tr>
+      <td><p class="tetra-logo ">Su pedido esta siendo procesado por nuestro personal, haremos lo posible para que llegue a sus manos.</p></td>
+      
+  </tr>
+  <tr>
+      <td><button type="button" class="btn btn-danger ml-5" data-dismiss="modal">Ver seguimiento</button></td>
+  </tr>
+
+</table>
+
+{%endblock ContenidoMisCompras%}

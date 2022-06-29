@@ -1,0 +1,40 @@
+{% extends 'app/base_miscompras.html' %}
+{% load static %}
+{% block css %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.8/sweetalert2.css">
+{% endblock css %}
+{% load crispy_forms_tags %}
+{% block ContenidoMisCompras %}
+<div class="col-sm-12  bg-rojo-clarito">
+<div style="background-color: rgb(228, 11, 11); color: white;" class="m-5">
+<form action="" method="post"   class="m-2" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form | crispy }}
+        
+    </table>
+    <input type="submit" class="btn btn-success" value="Guardar">
+</form>
+
+{% if messages %}
+<script>
+    alert(1);
+</script>
+    {% for msj in messages %}
+    <p>{{ msj }}</p>
+        <script>
+            alert(2);
+            Swal.fire({
+                title: 'Guardado!',
+                text: '{{ msj }}',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 2000
+                });
+            </script>
+        {% endfor %}
+    {% endif %}
+</div>
+</div>
+{% endblock ContenidoMisCompras %}

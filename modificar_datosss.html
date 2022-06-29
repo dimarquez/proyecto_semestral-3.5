@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block contenidoBase %}
+{% load crispy_forms_tags %}
+<div style="background-color: black; color: white;" class="m-5">
+<form action="" method="post"   class="m-2" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {{ form | crispy}}
+        
+    </table>
+    <input type="submit" class="btn btn-success" value="Modificar">
+</form>
+{{ mensaje }}
+</div>
+{% endblock %}
